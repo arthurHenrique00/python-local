@@ -29,9 +29,9 @@ def gerar_csv():
     dado = extracao_cdi()
 
     for _ in range(0, 10):
-        data_e_hora = datetime.now()
-        data = datetime.strftime(data_e_hora, '%Y/%m/%d')
-        hora = datetime.strftime(data_e_hora, '%H:%M:%S')
+        date_time = datetime.now()
+        data = datetime.strftime(date_time, '%Y/%m/%d')
+        hora = datetime.strftime(date_time, '%H:%M:%S')
 
         cdi = float(dado) + (random() - 0.5)
 
@@ -46,7 +46,7 @@ def gerar_csv():
 
     print("CSV gerado com sucesso.")
 
-def gerar_grafico(nome_grafico):
+def grafico(nome_grafico):
     df = pd.read_csv('./taxa-cdi.csv')
 
     grafico = sns.lineplot(x=df['hora'], y=df['taxa'])
@@ -63,7 +63,7 @@ def main():
 
     gerar_csv()
 
-    gerar_grafico(nome_grafico)
+    grafico(nome_grafico)
 
 if __name__ == "__main__":
     main()
