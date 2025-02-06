@@ -8,7 +8,7 @@ const updateAbout = {
     then_im: 666
 };
 
-console.log(updateAbout);
+//console.log(updateAbout);
 
 // Rest Operator
 const persona = {
